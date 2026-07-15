@@ -8,6 +8,10 @@ source that simulates the CAN bus / VHAL as a continuous reactive stream.
 The project was built to exercise a production-grade Android stack: Clean Architecture, MVVM,
 Hilt, Kotlin Coroutines/Flow and custom `Canvas`-based views.
 
+## Demo
+
+![Vehicle Dashboard running on the Android Automotive emulator](docs/demo.gif)
+
 ## Features
 
 - Analog speedometer and tachometer (with redline), P-R-N-D gear indicator and a fuel level bar,
