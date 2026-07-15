@@ -13,8 +13,10 @@ android {
         }
     }
 
-    // ViewBinding: gera uma classe de binding por layout XML, dando acesso type-safe
-    // às views (sem findViewById e sem risco de cast errado). Padrão da ESPEC.
+    // Car API (android.car) — necessária pra ler/escrever propriedades do VHAL no AAOS.
+    // É uma optional library da plataforma: entra no compile, não é empacotada no APK.
+    useLibrary("android.car")
+
     buildFeatures {
         viewBinding = true
     }

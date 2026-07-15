@@ -1,8 +1,10 @@
 package com.volks.vehicledashboard.presentation.dashboard
 
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -21,14 +23,37 @@ class DashboardActivity : AppCompatActivity() {
 
     private val viewModel: DashboardViewModel by viewModels()
 
+    // Strings literais (e não android.car.Car.PERMISSION_*) pra não carregar a car lib num celular
+    private val carPermissions = arrayOf(
+        "android.car.permission.CAR_INFO",
+        "android.car.permission.CAR_SPEED",
+        "android.car.permission.CAR_ENERGY",
+        "android.car.permission.CAR_POWERTRAIN"
+    )
+
+    private val carPermissionLauncher =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) {
+            // Sem permissão o VHAL apenas não emite; a tela segue com o que tiver.
+        }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDashboardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        requestCarPermissionsIfNeeded()
         configureGauges()
         setupControls()
         observeState()
+    }
+
+    /** Permissões do VHAL só existem no AAOS; num celular a checagem é ignorada. */
+    private fun requestCarPermissionsIfNeeded() {
+        if (!packageManager.hasSystemFeature(PackageManager.FEATURE_AUTOMOTIVE)) return
+        val missing = carPermissions.filter {
+            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+        }
+        if (missing.isNotEmpty()) carPermissionLauncher.launch(missing.toTypedArray())
     }
 
     private fun configureGauges() {
