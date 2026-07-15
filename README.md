@@ -12,6 +12,13 @@ Hilt, Kotlin Coroutines/Flow and custom `Canvas`-based views.
 
 ![Vehicle Dashboard running on the Android Automotive emulator](docs/demo.gif)
 
+## Download
+
+The latest APK is available on the
+[Releases page](https://github.com/tercette/VehicleDashboard/releases/latest). Install it on an
+Android device (enable installation from unknown sources) or run it on the Android Automotive
+emulator. The same APK works on both, since the automotive feature is declared as optional.
+
 ## Features
 
 - Analog speedometer and tachometer (with redline), P-R-N-D gear indicator and a fuel level bar,
