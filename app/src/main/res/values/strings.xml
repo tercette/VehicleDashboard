@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">VehicleDashboard</string>
+
+    <string name="fuel_percent_format">%1$d%%</string>
+    <string name="dash_placeholder">--</string>
+
+    <string name="speed_unit">km/h</string>
+    <string name="label_fuel">Combustível</string>
+    <string name="label_rpm">RPM</string>
+    <string name="label_gear">Marcha</string>
+
+    <string name="btn_accelerator">ACELERAR</string>
+    <string name="btn_brake">FREAR</string>
+
+    <string name="ignition_start">LIGAR</string>
+    <string name="ignition_stop">DESLIGAR</string>
+    <string name="label_fuel_bar">COMBUSTÍVEL</string>
+
+    <string name="btn_refuel">⛽ ABASTECER</string>
+</resources>

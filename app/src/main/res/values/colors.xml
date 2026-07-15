@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="dashboard_background">#0E1116</color>
+    <color name="dashboard_text_primary">#FFFFFF</color>
+    <color name="dashboard_text_secondary">#8A93A2</color>
+
+    <color name="gauge_speed_accent">#00E5FF</color>
+    <color name="gauge_rpm_accent">#FFB300</color>
+    <color name="pedal_accelerator">#1B7F3B</color>
+    <color name="pedal_accelerator_pressed">#2ECC71</color>
+    <color name="pedal_brake">#B3261E</color>
+    <color name="pedal_brake_pressed">#E74C3C</color>
+    <color name="ignition_off">#37424F</color>
+    <color name="refuel_tint">#0277BD</color>
+</resources>
