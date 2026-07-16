@@ -22,7 +22,7 @@ object AppModule {
      * Trocar esta linha é a única mudança necessária: domain e presentation não sabem
      * qual implementação está por trás da interface VehicleRepository.
      */
-    private const val USE_REAL_VHAL = true
+    private const val USE_REAL_VHAL = false
 
     @Provides
     @Singleton
